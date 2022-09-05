@@ -3,8 +3,7 @@ import React, { useState } from "react";
 
 const MENU_LIST = [
   { text: "Home", href: "/" },
-  { text: "About Us", href: "/about" },
-  { text: "Contact", href: "/contact" },
+  { text: "Posts", href: "/posts" },
 ];
 
 const Navbar = () => {
@@ -13,7 +12,7 @@ const Navbar = () => {
       <nav>
         {MENU_LIST.map(({ text, href }) => {
           return (
-            <div>
+            <div key={text}>
               <a href={href}>{text}</a>
             </div>
           );
