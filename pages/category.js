@@ -14,7 +14,6 @@ export async function getStaticProps() {
 }
 
 export default function Post({ dirs }) {
-  console.log(dirs);
   return (
     <Layout>
       {/* Keep the existing code here */}
@@ -24,10 +23,12 @@ export default function Post({ dirs }) {
         <h2 className={utilStyles.headingLg}>Categories</h2>
 
         <ul className={utilStyles.list}>
-          {dirs.map((dir) => (
-            <li className={utilStyles.listItem} key={dir}>
-              <Link href={`/${dir}`}>
-                <a>{dir}</a>
+          {dirs.map((dirs) => (
+            <li className={utilStyles.listItem} key={dirs.name}>
+              <Link href={`/${dirs.name}`}>
+                <a>
+                  {dirs.name}({dirs.cnt})
+                </a>
               </Link>
               <br />
             </li>
