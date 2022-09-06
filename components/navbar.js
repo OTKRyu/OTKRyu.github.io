@@ -1,5 +1,7 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
+
+import styles from "./navbar.module.css";
 
 const MENU_LIST = [
   { text: "Home", href: "/" },
@@ -9,15 +11,18 @@ const MENU_LIST = [
 const Navbar = () => {
   return (
     <header>
-      <nav>
+      <nav className={styles.navList}>
         {MENU_LIST.map(({ text, href }) => {
           return (
             <div key={text}>
-              <a href={href}>{text}</a>
+              <Link href={href}>
+                <a className={styles.navItem}>{text}</a>
+              </Link>
             </div>
           );
         })}
       </nav>
+      <hr></hr>
     </header>
   );
 };
