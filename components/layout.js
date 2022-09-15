@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 const name = "[Your Name]";
 export const siteTitle = "Next.js Sample Website";
@@ -34,13 +35,7 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <Footer></Footer>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "Posts", href: "/posts" },
+  { text: "Tags", href: "/tags" },
 ];
 
 const Navbar = () => {
