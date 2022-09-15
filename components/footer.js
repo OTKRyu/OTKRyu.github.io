@@ -4,12 +4,16 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer>
-      <a href="mailto:appn12@gmail.com">
-        <Image src="./images/email_icon.png" />
-      </a>
-      <a href="https://https://github.com/OTKRyu">
-        <Image src="./images/GiHub-Mark-32px.png" />
-      </a>
+      <div>
+        <a href="mailto:appn12@gmail.com">
+          <Image src="/images/email_icon.png" width={30} height={30} />
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/OTKRyu">
+          <Image src="/images/GitHub-Mark-32px.png" width={30} height={30} />
+        </a>
+      </div>
     </footer>
   );
 };

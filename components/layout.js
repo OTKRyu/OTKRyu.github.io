@@ -15,7 +15,6 @@ export default function Layout({ children }) {
       <Navbar />
       <header></header>
       <main>{children}</main>
-      왜 안 나옴
       <Footer />
     </div>
   );
