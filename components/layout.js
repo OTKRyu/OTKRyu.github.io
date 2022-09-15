@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
@@ -15,7 +13,7 @@ export default function Layout({ children, home }) {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar></Navbar>
+      <Navbar />
       <header className={styles.header}>
         {home ? (
           <>
@@ -35,7 +33,7 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
