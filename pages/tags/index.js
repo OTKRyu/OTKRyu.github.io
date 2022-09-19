@@ -1,18 +1,18 @@
 import Link from "next/link";
 
-import Layout from "../components/layout";
-import { getDirs } from "../lib/dirs";
+import Layout from "../../components/layout";
+import { getAllSortedTags } from "../../lib/tags";
 
 export async function getStaticProps() {
-  const dirs = getDirs();
+  const tags = getAllSortedTags();
   return {
     props: {
-      dirs,
+      tags,
     },
   };
 }
 
-export default function Post({ dirs }) {
+export default function Tag({ tags }) {
   return (
     <Layout>
       {/* Keep the existing code here */}
@@ -22,11 +22,11 @@ export default function Post({ dirs }) {
         <h2>Tags</h2>
 
         <ul>
-          {dirs.map((dirs) => (
-            <li key={dirs.name}>
-              <Link href={`/${dirs.name}`}>
+          {tags.map((tag) => (
+            <li key={tag.name}>
+              <Link href={`/tags/${tag.name}`}>
                 <a>
-                  {dirs.name}({dirs.cnt})
+                  {tag.name}({tag.count})
                 </a>
               </Link>
               <br />

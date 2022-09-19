@@ -1,17 +1,8 @@
 import Link from "next/link";
 
-import Layout from "../components/layout";
-import Date from "../components/date";
-import { getSortedPostsData } from "../lib/posts";
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+import Layout from "../../components/layout";
+import Date from "../../components/date";
+import { getTagData } from "../../lib/tags";
 
 export default function Post({ allPostsData }) {
   return (
@@ -38,4 +29,13 @@ export default function Post({ allPostsData }) {
       </section>
     </Layout>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const tagData = await getTagData(params.id);
+  return {
+    props: {
+      tagData,
+    },
+  };
 }
