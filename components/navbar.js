@@ -1,22 +1,21 @@
 import Link from "next/link";
 import React from "react";
 
-import styles from "./navbar.module.css";
-
 const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "Posts", href: "/posts" },
+  { text: "Tags", href: "/tags" },
 ];
 
 const Navbar = () => {
   return (
     <header>
-      <nav className={styles.navList}>
+      <nav>
         {MENU_LIST.map(({ text, href }) => {
           return (
             <div key={text}>
               <Link href={href}>
-                <a className={styles.navItem}>{text}</a>
+                <a>{text}</a>
               </Link>
             </div>
           );
