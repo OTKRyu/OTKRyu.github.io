@@ -1,5 +1,5 @@
 ---
-title: "programmers_12936"
+title: "programmers_12936.py"
 date: "2022-09-19"
 tags:
   - algorithm

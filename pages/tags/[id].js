@@ -2,19 +2,19 @@ import Link from "next/link";
 
 import Layout from "../../components/layout";
 import Date from "../../components/date";
-import { getTagData } from "../../lib/tags";
+import { getTagPosts, getAllTags } from "../../lib/tags";
 
-export default function Post({ allPostsData }) {
+export default function Post({ tagName, tagPosts }) {
   return (
     <Layout>
       {/* Keep the existing code here */}
 
       {/* Add this <section> tag below the existing <section> tag */}
       <section>
-        <h2>Posts</h2>
+        <h2>{tagName}</h2>
 
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {tagPosts.map(({ id, date, title }) => (
             <li key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
@@ -31,11 +31,20 @@ export default function Post({ allPostsData }) {
   );
 }
 
+export async function getStaticPaths() {
+  const paths = getAllTags();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 export async function getStaticProps({ params }) {
-  const tagData = await getTagData(params.id);
+  const tagPosts = await getTagPosts(params.id);
+  console.log(tagPosts);
   return {
     props: {
-      tagData,
+      tagPosts: tagPosts,
     },
   };
 }
