@@ -16,11 +16,8 @@ export async function getStaticProps() {
 export default function Post({ allPostsData }) {
   return (
     <Layout>
-      {/* Keep the existing code here */}
-
-      {/* Add this <section> tag below the existing <section> tag */}
       <section>
-        <h2>Posts</h2>
+        <h1>Posts</h1>
 
         <ul>
           {allPostsData.map(({ id, date, title }) => (

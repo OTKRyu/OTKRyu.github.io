@@ -11,7 +11,7 @@ export default function Post({ tagName, tagPosts }) {
 
       {/* Add this <section> tag below the existing <section> tag */}
       <section>
-        <h2>{tagName}</h2>
+        <h1>{tagName}</h1>
 
         <ul>
           {tagPosts.map(({ id, date, title }) => (

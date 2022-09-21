@@ -5,6 +5,7 @@ const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "Posts", href: "/posts" },
   { text: "Tags", href: "/tags" },
+  { text: "About", href: "/about" },
 ];
 
 const Navbar = () => {
