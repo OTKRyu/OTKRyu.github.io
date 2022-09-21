@@ -3,11 +3,12 @@ import Footer from "./footer";
 
 export default function Layout({ children }) {
   return (
-    <div>
-      <Navbar />
-      <header>OTKRyu's Blog</header>
-      <main>{children}</main>
-      <Footer />
+    <div className="bg-blue-400">
+      <div className="p-5">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </div>
     </div>
   );
 }

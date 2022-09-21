@@ -16,14 +16,14 @@ export async function getStaticProps() {
 export default function Post({ allPostsData }) {
   return (
     <Layout>
-      <section>
-        <h1>Posts</h1>
-
+      <section className="bg-white border rounded my-3 w-full h-full p-5">
+        <h1 className="text-3xl">Posts</h1>
+        <hr className="my-3"></hr>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
+            <li key={id} className="border rounded p-3 hover:underline">
               <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className="text-xl">{title}</a>
               </Link>
               <br />
               <small>

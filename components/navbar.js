@@ -10,20 +10,20 @@ const MENU_LIST = [
 
 const Navbar = () => {
   return (
-    <header>
-      <nav>
+    <nav className="bg-white flex justify-between border rounded my-3">
+      <div className="p-2">OTKRyu</div>
+      <div className="flex">
         {MENU_LIST.map(({ text, href }) => {
           return (
-            <div key={text}>
+            <div key={text} className="p-2 hover:underline">
               <Link href={href}>
                 <a>{text}</a>
               </Link>
             </div>
           );
         })}
-      </nav>
-      <hr></hr>
-    </header>
+      </div>
+    </nav>
   );
 };
 
