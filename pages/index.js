@@ -1,21 +1,15 @@
 import Layout from "../components/layout";
-import { getSortedPostsData } from "../lib/posts";
-
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
 
 export default function Home() {
   return (
     <Layout>
-      {/* Add this <section> tag below the existing <section> tag */}
-      <section>
-        <h2>Blog</h2>
+      <section className="bg-white border rounded my-3 w-full h-full p-5">
+        <h1 className="text-3xl">Home</h1>
+        <hr className="my-3"></hr>
+        <p>안녕하세요~</p>
+        <p>OTKRyu의 블로그입니다.</p>
+        <p>개발과 관련된 포스트들을 올리는 블로그입니다.</p>
+        <p>대단한 내용을 없더라도, 도움이 되었으면 좋겠습니다.</p>
       </section>
     </Layout>
   );

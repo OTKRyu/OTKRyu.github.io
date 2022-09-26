@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-import Layout from "../components/layout";
-import Date from "../components/date";
-import { getSortedPostsData } from "../lib/posts";
+import Layout from "../../components/layout";
+import Date from "../../components/date";
+import { getSortedPostsData } from "../../lib/posts";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -16,17 +16,14 @@ export async function getStaticProps() {
 export default function Post({ allPostsData }) {
   return (
     <Layout>
-      {/* Keep the existing code here */}
-
-      {/* Add this <section> tag below the existing <section> tag */}
-      <section>
-        <h2>Posts</h2>
-
+      <section className="bg-white border rounded my-3 w-full h-full p-5">
+        <h1 className="text-3xl">Posts</h1>
+        <hr className="my-3"></hr>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
+            <li key={id} className="border rounded p-3 hover:underline">
               <Link href={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className="text-xl">{title}</a>
               </Link>
               <br />
               <small>
