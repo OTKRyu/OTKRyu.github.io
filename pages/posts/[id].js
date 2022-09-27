@@ -15,7 +15,10 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <hr className="my-3"></hr>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div
+          className="prose lg:prose-xl px-2 m-auto my-4 sm:my-16"
+          dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
+        />
       </article>
     </Layout>
   );
