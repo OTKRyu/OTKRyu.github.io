@@ -51,4 +51,4 @@ next도 webpack처럼 각기 파일 형태에 따라 loader를 사용하여 처�
 ## 출처
 
 더 자세한 정보를 원한다면 공식문서에 에러와 그 원인 및 해결방법까지 잘 써져 있다.
-[next/image](https://nextjs.org/docs/api-reference/next/image)
+[https://nextjs.org/docs/api-reference/next/image](https://nextjs.org/docs/api-reference/next/image)
