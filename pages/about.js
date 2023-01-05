@@ -25,21 +25,31 @@ export default function Home() {
           </p>
           <h2>경력</h2>
           <h3>다날 핀테크</h3>
-          <ul>
+          <ol>
             <li>재직 기간: 22.02 ~ 현재</li>
             <li>주요 업무</li>
-            <ol>
-              <li>회사 홈페이지 관리</li>
+            <ul>
+              <li>
+                회사 홈페이지(www.payprotocol.io) 관리를 포함한 정적 소스 관리
+              </li>
               <li>통합 계정 관리 솔루션(keycloak, casbin) 검토 및 데모 개발</li>
               <li>vue를 이용한 신규 서비스 개발(웹 사이트, 모바일 웹뷰 등)</li>
               <li>웹서버 apache에서 nginx로 교체</li>
               <li>자사 앱 리뷰 크롤링 및 공유용 구글 스프레드 시트 개발</li>
               <li>ISMS 보안 조치(docker, apache, redis 등)</li>
               <li>
+                앱에 쓰이는 웹뷰 서버 운영 및 유지보수(로그 정책 변경, 서버
+                의존성 제거 등)
+              </li>
+              <li>
+                회사 내부 백오피스 개발 및 유지보수(버그 픽스, 신규 관리 기능
+                추가 등)
+              </li>
+              <li>
                 이용자보호센터[https://carecenter.payprotocol.io] 개발 및 배포
               </li>
-            </ol>
-          </ul>
+            </ul>
+          </ol>
         </div>
       </section>
     </Layout>
