@@ -35,6 +35,9 @@ export default function Home() {
               <li>웹서버 apache에서 nginx로 교체</li>
               <li>자사 앱 리뷰 크롤링 및 공유용 구글 스프레드 시트 개발</li>
               <li>ISMS 보안 조치(docker, apache, redis 등)</li>
+              <li>
+                이용자보호센터[https://carecenter.payprotocol.io] 개발 및 배포
+              </li>
             </ol>
           </ul>
         </div>
