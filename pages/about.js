@@ -111,6 +111,10 @@ export default function Home() {
                   <br></br>
                   elk 스택 설정 조정(ILM 정책, stack별 할당 메트릭 변경, 기존
                   에러 수정 등)
+                  <br></br>
+                  elk monitoring(x-pack) 구축
+                  <br></br>
+                  es cluster 구축을 통한 가용성 확보
                 </p>
               </div>
             </li>
@@ -126,13 +130,27 @@ export default function Home() {
                 </p>
               </div>
             </li>
+            <li>
+              <div>
+                <strong>사내 registry(nexus) 구축 및 관리</strong>
+                <p>
+                  DMZ 영역에 사내 registry(nexus) 구축
+                  <br></br>
+                  nexus 유저, 권한 및 역할 관리
+                  <br></br>
+                  npm, docker, pip, maven 등 외부 registry와의 연결
+                  <br></br>
+                  사용 가이드 문서 제작 및 본부 내 배포
+                </p>
+              </div>
+            </li>
           </ul>
           <h2>스택</h2>
           <hr></hr>
           <ul>
             <li>
               <strong>Backend</strong>
-              <p>express, flask, mysql, redis, nginx, apache, docker,</p>
+              <p>express, flask, mysql, redis, nginx, apache, docker, linux</p>
             </li>
             <li>
               <strong>Devops</strong>
