@@ -4,15 +4,6 @@ import Layout from "../../components/layout";
 import Date from "../../components/date";
 import { getSortedPostsData } from "../../lib/posts";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-
 export default function Post({ allPostsData }) {
   return (
     <Layout>
@@ -35,4 +26,13 @@ export default function Post({ allPostsData }) {
       </section>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }

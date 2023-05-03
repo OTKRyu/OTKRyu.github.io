@@ -3,15 +3,6 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import { getAllSortedTags } from "../../lib/tags";
 
-export async function getStaticProps() {
-  const tags = getAllSortedTags();
-  return {
-    props: {
-      tags,
-    },
-  };
-}
-
 export default function Tag({ tags }) {
   return (
     <Layout>
@@ -36,4 +27,13 @@ export default function Tag({ tags }) {
       </section>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const tags = getAllSortedTags();
+  return {
+    props: {
+      tags,
+    },
+  };
 }
