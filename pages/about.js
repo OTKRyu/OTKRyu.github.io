@@ -28,7 +28,7 @@ export default function Home() {
           <hr></hr>
           <h3>다날 핀테크</h3>
           <hr></hr>
-          <strong>재직 기간: 22.02 ~ 현재</strong>
+          <strong>재직 기간: 22.02 ~ 23.03</strong>
           <h4>주요 업무</h4>
 
           <ul>
@@ -142,6 +142,36 @@ export default function Home() {
                   <br></br>
                   사용 가이드 문서 제작 및 본부 내 배포
                 </p>
+              </div>
+            </li>
+          </ul>
+          <hr></hr>
+          <h3>페이프로토콜</h3>
+          <hr></hr>
+          <strong>재직 기간: 23.04 ~ 현재</strong>
+          <h4>주요 업무</h4>
+
+          <ul>
+            <li>
+              <div>
+                <strong>사내 AWS 관리</strong>
+                <p>사내 AWS 계정 사용 현황 정리 및 문서화</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Pinpoint 모니터링 툴 도입</strong>
+                <p>
+                  Pinpoint APM 모니터링 툴 도입
+                  <br></br>
+                  개발기 연동 테스트
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Cronicle을 통한 batch job 이전</strong>
+                <p>DB batch shell script 이전</p>
               </div>
             </li>
           </ul>
