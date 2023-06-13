@@ -56,3 +56,7 @@ registry 오픈소스이다.
   - 현재는 원본에서 소스코드를 받아오는 것에 단점 때문에 module 등을 도입하여 변경되었지만, 위와 같은 방식으로 운영되었기 때문에 의존성을 import 할 때 실제 주소처럼 쓰이는 것이다.
   - module 등을 도입하면서 위와 같은 상황에서 벗어나기 위해 proxy.golang.org 같은 곳에서 소스코드를 버전별로 분류해 저장하고 있지만, 권한 없이도 받아올 수 있는 public repo만 가능하다. private repo의 경우 proxy.golang.org에서 찾을 수 없다.
   - proxy.golang.org에서 찾을 수 없는 소스는 직접 주소에 요청을 하게 되는데, 이를 이용하여 private repo에 접근할 수 있는 계정을 동봉하여 요청을 보내면, 의존성을 가져올 수 있게 된다. .netrc 와 같은 방법을 통해서 할 수 있다.
+
+# 참조
+
+[https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories](https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories)
