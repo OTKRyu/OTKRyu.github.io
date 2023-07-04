@@ -12,7 +12,7 @@ export default function Post({ allPostsData }) {
         <hr className="my-3"></hr>
         <ul>
           {allPostsData.map(({ id, date, title }) => (
-            <li key={id} className="border rounded p-3 hover:underline">
+            <li key={id} className="border rounded p-3 my-3 hover:underline">
               <Link href={`/posts/${id}`}>
                 <a className="text-xl">{title}</a>
               </Link>
