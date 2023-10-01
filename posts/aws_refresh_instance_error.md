@@ -1,5 +1,5 @@
 ---
-title: "aws refresh instance error"
+title: "Aws refresh instance error"
 date: "2023-08-27"
 tags:
   - aws

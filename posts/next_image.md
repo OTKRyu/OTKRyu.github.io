@@ -1,5 +1,5 @@
 ---
-title: "error about next/image "
+title: "Error about next/image "
 date: "2022-10-12"
 tags:
   - next

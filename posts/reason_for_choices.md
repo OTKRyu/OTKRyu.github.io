@@ -1,5 +1,5 @@
 ---
-title: "reason for choices"
+title: "Reason for choices"
 date: "2023-01-19"
 tags:
   - work

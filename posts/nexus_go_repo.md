@@ -1,5 +1,5 @@
 ---
-title: "nexus go repo"
+title: "Nexus go repo"
 date: "2023-04-17"
 tags:
   - nexus

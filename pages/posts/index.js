@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import { getSortedPostsData } from "../../lib/posts";
@@ -7,6 +8,7 @@ import { getSortedPostsData } from "../../lib/posts";
 export default function Post({ allPostsData }) {
   return (
     <Layout>
+      <Seo id={"posts"} title={"posts"} tags={["posts"]} />
       <section className="bg-white border rounded my-3 w-full h-full p-5">
         <h1 className="text-3xl">Posts</h1>
         <hr className="my-3"></hr>

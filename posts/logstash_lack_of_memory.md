@@ -1,5 +1,5 @@
 ---
-title: "logstash lack of memory"
+title: "Logstash lack of memory"
 date: "2023-02-04"
 tags:
   - elk stack

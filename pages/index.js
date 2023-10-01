@@ -1,8 +1,10 @@
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 export default function Home() {
   return (
     <Layout>
+      <Seo id={"home"} title={"home"} tags={["home"]} />
       <section className="bg-white border rounded my-3 w-full h-full p-5">
         <h1 className="text-3xl">Home</h1>
         <hr className="my-3"></hr>

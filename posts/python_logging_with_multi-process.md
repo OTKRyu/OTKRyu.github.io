@@ -1,5 +1,5 @@
 ---
-title: "python logging with multi process"
+title: "Python logging with multi process"
 date: "2023-01-03"
 tags:
   - python

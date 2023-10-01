@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Seo from "../../components/seo";
 import Layout from "../../components/layout";
 import Date from "../../components/date";
 import { getTagPosts, getAllTags } from "../../lib/tags";
@@ -7,6 +8,7 @@ import { getTagPosts, getAllTags } from "../../lib/tags";
 export default function Post({ tagName, tagPosts }) {
   return (
     <Layout>
+      <Seo id={tagName} title={tagName} tags={[tagName]} />
       <section className="bg-white border rounded my-3 w-full h-full p-3">
         <h1 className="text-3xl">{tagName}</h1>
         <hr className="my-3"></hr>
@@ -38,7 +40,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const tagPosts = await getTagPosts(params.id);
-  console.log(params.id);
   return {
     props: {
       tagName: params.id,

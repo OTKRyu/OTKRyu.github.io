@@ -1,8 +1,10 @@
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 export default function Home() {
   return (
     <Layout>
+      <Seo id={"about"} title={"about"} tags={"about"} />
       <section className="bg-white flex justify-between border rounded my-3 w-full h-full">
         <div className="prose lg:prose-xl px-2 m-auto my-4 sm:my-16">
           <h1>About</h1>

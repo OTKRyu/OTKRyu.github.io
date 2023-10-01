@@ -1,5 +1,5 @@
 ---
-title: "apache enableMMAP option"
+title: "Apache enableMMAP option"
 date: "2022-09-27"
 tags:
   - apache

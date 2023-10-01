@@ -2,7 +2,8 @@ import React from "react";
 import Head from "next/head";
 
 const Seo = ({ id, title, tags }) => {
-  const content = tags.join(",");
+  const seoTags = ["otkryu"].concat(tags);
+  const content = seoTags.join(",");
   return (
     <Head>
       <title>{title}</title>

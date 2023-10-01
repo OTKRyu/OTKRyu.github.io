@@ -1,5 +1,5 @@
 ---
-title: "too many index cause performence issue in elasticsearch"
+title: "Too many index cause performence issue in elasticsearch"
 date: "2023-06-14"
 tags:
   - elasticsearch
