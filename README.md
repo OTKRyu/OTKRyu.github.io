@@ -1,1 +1,8 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# OTKRyu.github.io
+OTKRyu의 블로그입니다.
+
+삽질 많이 했는데 국내 자료가 없는 주제에 대한 포스트 번역이나,
+일하다가 가끔 생각나는 주제가 생기면 포스트를 적습니다.
+
+도움이 될지는 모르겠지만,
+누군가에게 도움이 되면 좋겠다고 생각합니다.
