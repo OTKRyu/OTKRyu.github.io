@@ -59,4 +59,4 @@ registry 오픈소스이다.
 
 # 참조
 
-https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories[https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories]
+[https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories]https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories

@@ -89,4 +89,4 @@ leader에게 outbound로, follower는 inbound로 연결을 설정했다.
 
 # 참고
 
-https://docs.aws.amazon.com/ko_kr/opensearch-service/latest/developerguide/replication.html[https://docs.aws.amazon.com/ko_kr/opensearch-service/latest/developerguide/replication.html]
+[https://docs.aws.amazon.com/ko_kr/opensearch-service/latest/developerguide/replication.html]https://docs.aws.amazon.com/ko_kr/opensearch-service/latest/developerguide/replication.html

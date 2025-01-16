@@ -57,7 +57,7 @@ elasticsearch는 인덱스에 새로운 데이터가 계속 들어옴에 따라 
 어느 날 회사의 시니어 분께서 자기가 기술 블로그에서 본 글이 있는데,
 현재 상황이랑 비슷한 것 같다면서 포스트 링크를 하나 보내주셨다.
 
-https://netflixtechblog.com/elasticsearch-indexing-strategy-in-asset-management-platform-amp-99332231e541[https://netflixtechblog.com/elasticsearch-indexing-strategy-in-asset-management-platform-amp-99332231e541]
+[https://netflixtechblog.com/elasticsearch-indexing-strategy-in-asset-management-platform-amp-99332231e541]https://netflixtechblog.com/elasticsearch-indexing-strategy-in-asset-management-platform-amp-99332231e541
 
 넷플릭스 테크 블로그의 포스트인데 실제로 현재 회사 상황과 비슷했다.
 포스트 내용은 넷플릭스가 asset을 elasticsearch에 등록할 때마다 새로운 인덱스를 생성하여 쓰다가,
