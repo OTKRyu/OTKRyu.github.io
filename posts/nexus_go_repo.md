@@ -20,7 +20,7 @@ registry 오픈소스이다.
 오픈소스로도 꽤나 많은 기능을 제공하기 때문에,
 사내에서 private registry가 필요하다면 한 번 고려해볼만 하다.
 
-자세한 내용은 링크를 참조 [https://www.sonatype.com/products/nexus-repository](https://www.sonatype.com/products/nexus-repository)
+자세한 내용은 링크를 참조 (https://www.sonatype.com/products/nexus-repository)
 
 ## how to set go repo in nexus
 
@@ -59,4 +59,4 @@ registry 오픈소스이다.
 
 # 참조
 
-[https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories]https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories
+https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories

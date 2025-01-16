@@ -32,8 +32,8 @@ tags:
 ### python logging
 
 - 기존의 python 서버는 파이썬에서 제공하는 기본 logging 라이브러리를 사용
-- logging 라이브러리에 대한 공식 문서가 나와 있긴 한데, 단순 python 실행에 대한 설명만 있음(https://docs.python.org/ko/3/howto/logging.html[https://docs.python.org/ko/3/howto/logging.html])
-- 대부분의 파이썬 서버 환경인 multi processs 환경에서 logging과 관련하여 생길 수 있는 문제에 대해서는 잘 설명되어 있는 영문 문서를 찾음(https://www.packetmischief.ca/2017/10/25/3-ways-to-fail-at-logging-with-flask/[https://www.packetmischief.ca/2017/10/25/3-ways-to-fail-at-logging-with-flask/])
+- logging 라이브러리에 대한 공식 문서가 나와 있긴 한데, 단순 python 실행에 대한 설명만 있음(https://docs.python.org/ko/3/howto/logging.html)
+- 대부분의 파이썬 서버 환경인 multi processs 환경에서 logging과 관련하여 생길 수 있는 문제에 대해서는 잘 설명되어 있는 영문 문서를 찾음(https://www.packetmischief.ca/2017/10/25/3-ways-to-fail-at-logging-with-flask/)
 
 ### python logging with multi process
 
@@ -64,6 +64,6 @@ tags:
 ### 결론
 
 - 결국 영문 글에서 추천하는 것은, logging 및 log rotate를 python 내부나 os의 툴을 사용하여 하지 말고, 외부의 logging을 모니터링할 수 있는 별도의 대책을 마련하라는 것이다.
-  - 영문 글에서는 Sentry[https://sentry.io/for/flask/]를 예시로 들었다.
+  - 영문 글에서는 Sentry를 예시로 들었다.
 - 차선책으로는 os의 log rotate 툴과 WatchedFileHandler를 쓰는 것을 권했다.
   - Sentry나 추가 모니터링 툴은 결국 회사의 결정이 필요한 해결책이다 보니, 필자도 차선책을 택했다.
