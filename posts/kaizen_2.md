@@ -1,6 +1,7 @@
 ---
 title: "Kaizen 2"
 date: "2025-12-10"
+relatedPost: "revisit"
 tags:
   - thread
   - async

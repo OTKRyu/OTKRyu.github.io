@@ -1,6 +1,7 @@
 ---
 title: "Opensearch Blow Experience"
 date: "2025-04-27"
+relatedPost: "revisit"
 tags:
   - opensearch
   - OOM

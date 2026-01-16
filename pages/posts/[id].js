@@ -3,6 +3,7 @@ import Seo from "../../components/seo";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
 export default function Post({ postData, id }) {
+  const href = `/posts/${postData.relatedPost}`;
   return (
     <Layout>
       <Seo id={id} title={postData.title} tags={postData.tags} />
@@ -16,8 +17,19 @@ export default function Post({ postData, id }) {
           className="prose lg:prose-xl px-2 m-auto my-4 sm:my-16"
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
-      </article>
-    </Layout>
+        {postData?.relatedPost && (
+          <div className="mt-8 flex justify-center">
+            <a
+              href={href}
+              className="inline-flex items-center gap-2 rounded-md border border-gray-300 px-5 py-3 text-lg text-gray-700 hover:bg-gray-100 hover:text-black transition"
+            >
+              👉 Related post : 
+              <span className="font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors">{postData.relatedPost}</span>
+            </a>
+          </div>
+        )}
+              </article>
+            </Layout>
   );
 }
 
