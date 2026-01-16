@@ -1,7 +1,7 @@
 ---
 title: "Kaizen 1"
 date: "2025-12-08"
-relatedPost: "/posts/kaizen_2"
+relatedPost: "kaizen_2"
 tags:
   - process
   - thread
