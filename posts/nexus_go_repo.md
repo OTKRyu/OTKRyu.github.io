@@ -34,8 +34,8 @@ registry 오픈소스이다.
 2. go repo 생성(proxy)
 3. go repo 이름 및 proxy 주소 설정
 
-   - 다른 리포와 다른 점이라고 한다면, 다른 리포들은 기본적으로 쓰이는 repo가 https://registry.npmjs.org/등으로 명시되어 있는 반면, go는 기본적으로 쓰이는 리포가 적혀있지 않다.
-   - go 공식 repo를 쓰고 싶다면 https://proxy.golang.org를 기재하면 된다.
+   - 다른 리포와 다른 점이라고 한다면, 다른 리포들은 기본적으로 쓰이는 repo가 https://registry.npmjs.org/ 등으로 명시되어 있는 반면, go는 기본적으로 쓰이는 리포가 적혀있지 않다.
+   - go 공식 repo를 쓰고 싶다면 https://proxy.golang.org 를 기재하면 된다.
 
 4. 위 설정을 마친 뒤 nexus에 접근가능한 곳에서 GOPROXY 환경변수를 nexus주소로 변경
 
