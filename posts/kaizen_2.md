@@ -1,16 +1,13 @@
 ---
 title: "Kaizen 2"
+description: "Kaizen 2편. 기능별 서버 분리, 쓰레드풀을 비동기로 바꾸며 사라진 메모리 누수, 전체 갱신에서 증분 갱신으로의 고민과 소회."
 date: "2025-12-10"
 relatedPost: "revisit"
 tags:
-  - thread
-  - async
-  - server
+  - concurrency
   - continuous improvement
-  - memory leak
+  - memory
 ---
-
-# kaizen 2
 
 kaizen 1 편에서 이어진다.
 

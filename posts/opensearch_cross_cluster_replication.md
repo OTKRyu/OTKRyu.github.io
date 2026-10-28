@@ -1,13 +1,13 @@
 ---
 title: "Opensearch cross-cluster replication"
+description: "AWS OpenSearch 클러스터 간 복제를 설정하며 헷갈렸던 leader/follower 용어와 클러스터 연결 방향 정리."
 date: "2023-11-02"
 tags:
   - opensearch
   - replication
-  - cross-cluster
 ---
 
-# opensearch
+## opensearch
 
 elasticsearch가 버전 업하면서 유료 툴로 변경되자,
 아마존사에서 무료 툴이었던 부분까지만 포크를 떠서 자체적으로 관리를 시작한 것이 opensearch다.
@@ -87,6 +87,6 @@ leader에게 outbound로, follower는 inbound로 연결을 설정했다.
 독자 노선이 꼭 나쁘다는 건 아닌데,
 독자 노선을 걸을거면 일관성 있게 적거나 하다못해 자세한 작동 방식까지 적어줬으면 좋겠다.
 
-# 참고
+## 참고
 
 https://docs.aws.amazon.com/ko_kr/opensearch-service/latest/developerguide/replication.html

@@ -106,17 +106,3 @@ pre code { background: none; padding: 0; }
 .post-list time, .tag-list span { color: var(--muted); font-size: 0.9rem; }
 .tag-list li { padding: 0.25rem 0; }
 
-/* 코드 하이라이트 (prism 토큰) */
-.token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--muted); font-style: italic; }
-.token.keyword, .token.boolean, .token.important, .token.atrule { color: #cf222e; }
-.token.string, .token.char, .token.attr-value, .token.regex { color: #0a3069; }
-.token.number, .token.constant, .token.symbol { color: #0550ae; }
-.token.function, .token.class-name { color: #8250df; }
-.token.tag, .token.selector, .token.property { color: #116329; }
-@media (prefers-color-scheme: dark) {
-  .token.keyword, .token.boolean, .token.important, .token.atrule { color: #ff7b72; }
-  .token.string, .token.char, .token.attr-value, .token.regex { color: #a5d6ff; }
-  .token.number, .token.constant, .token.symbol { color: #79c0ff; }
-  .token.function, .token.class-name { color: #d2a8ff; }
-  .token.tag, .token.selector, .token.property { color: #7ee787; }
-}

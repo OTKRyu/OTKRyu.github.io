@@ -1,12 +1,13 @@
 ---
 title: "Error about next/image "
+description: "GitHub Pages에 next export로 배포할 때 next/image 기본 로더가 동작하지 않는 이유와 해결 방법."
 date: "2022-10-12"
 tags:
   - next
   - error
 ---
 
-# next
+## next
 
 next는 react를 csr, ssr 등의 여러 방식으로 취사선택하여 서비스를 제공할 수 있도록 도와주는 복합적인 프레임워크다. 처음 next의 설명을 들었을 때, 이게 어떻게 가능한가 싶었다.
 ssr을 하려면 적어도 서버가 있어야되는데, next의 설명에는 서버관련된 코드같은 것들이 거의 나와있지 않기 때문이다.

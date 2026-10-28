@@ -1,14 +1,12 @@
 ---
 title: "Reason for choices"
+description: "혼자 급하게 서비스를 만들며 기존 팀 방식을 그대로 따른 선택을 돌아보며, 아키텍처와 방법론은 필요성에 따라 골라야 한다는 생각."
 date: "2023-01-19"
 tags:
-  - work
-  - private thinking
+  - essay
   - architecture
   - design pattern
 ---
-
-# 선택들에 대한 이유
 
 개인적인 생각이다.
 정답도 아니고 보장해주는 것도 없으며 심지어 틀릴 가능성까지 있다.

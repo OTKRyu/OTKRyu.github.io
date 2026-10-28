@@ -1,13 +1,11 @@
 ---
 title: "Aws refresh instance error"
+description: "Auto Scaling 그룹의 인스턴스 새로고침이 기존 인스턴스를 대상으로 인식하지 못하고 바로 끝나 버린 문제와, 수동 교체로 우회한 과정, 추정 원인 정리."
 date: "2023-08-27"
 tags:
   - aws
   - auto-scaling
-  - refresh instance
 ---
-
-# aws refresh instance
 
 ## 설명
 

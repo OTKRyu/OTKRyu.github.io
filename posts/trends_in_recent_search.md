@@ -1,5 +1,6 @@
 ---
 title: "Trends in recent search"
+description: "텍스트 기반 고전 검색과 벡터 검색의 원리와 장단점을 비교하고, 현업에서 느낀 검색 기술과 검색 조직의 고민."
 date: "2024-07-15"
 tags:
   - search
@@ -7,11 +8,7 @@ tags:
   - machine learning
   - elasticsearch
   - opensearch
-  - knn
-  - approximate knn search
 ---
-
-# Trends in recent search
 
 검색은 기본적으로 어떤 무리 안에서 내가 원하는 것을 찾는 행위이다.
 

@@ -1,14 +1,12 @@
 ---
 title: "Global latency"
+description: "글로벌 서비스 부하 테스트에서 겪은 두 가지 지연 원인. 가벼운 CPU 작업도 몰리면 막히는 이벤트 루프, 그리고 잘못된 DNS 설정으로 대륙을 건너간 요청."
 date: "2024-08-03"
 tags:
-  - global service
   - latency
-  - event loop
+  - concurrency
   - dns
 ---
-
-# global latency
 
 최근에 참여하고 있는 제품의 글로벌 환경에서 부하 테스트를 한 적이 있었다.
 해당 테스트를 진행하면서 겪었던 경험이 처음 겪어보는 것들이었어서,

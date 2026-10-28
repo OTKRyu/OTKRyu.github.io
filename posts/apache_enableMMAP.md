@@ -1,13 +1,12 @@
 ---
 title: "Apache enableMMAP option"
+description: "멀티스레드로 돌던 Apache 서버의 Bus error core dump를 추적해 enableMMAP 옵션을 원인으로 찾아 끈 경험. 원인 분석은 Revisit 글에서 다시 정정했다."
 date: "2022-09-27"
 relatedPost: "revisit"
 tags:
   - apache
   - error
 ---
-
-# apache enableMMAP option
 
 ## apache enableMMAP 옵션이란
 

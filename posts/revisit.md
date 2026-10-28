@@ -1,15 +1,14 @@
 ---
 title: "Revisit"
+description: "원인을 확실히 못 짚고 끝냈던 과거 이슈들(Apache MMAP, OpenSearch CPU 100%, Kaizen)을 AI와 다시 따져 보며 알게 된 실제 원인들."
 date: "2026-01-16"
 tags:
   - apache
   - mmap
   - polars
   - opensearch
-  - shared_memory
+  - memory
 ---
-
-# Revisit
 
 연말에 조직 개편 이슈로 인해 진행하던 업무들이 스탑되어서,
 남는 시간동안 일을 열심히 할 것도 아니고 해서, 제미나이랑 놀았다.

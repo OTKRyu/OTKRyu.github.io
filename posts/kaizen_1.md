@@ -1,16 +1,13 @@
 ---
 title: "Kaizen 1"
+description: "1년간 맡은 고트래픽 서버를 고쳐 나간 기록 1편. 쓰레드 생성으로 생긴 메모리 누수, 프로세스풀 정리, 메인 쓰레드 블로킹, 중계 서버 OOM 개선."
 date: "2025-12-08"
 relatedPost: "kaizen_2"
 tags:
-  - process
-  - thread
-  - server
+  - concurrency
   - continuous improvement
-  - memory leak
+  - memory
 ---
-
-# kaizen 1
 
 별 다른 의도는 없고, 그냥 맡았던 시스템 1년 정도의 기간 동안 계속 고쳤던 얘기를 해보고 싶어서 글을 쓴다.
 `지속적인 개선` 에 해당하는 단어가 뭐가 있을까 고민했는데 린 시스템에서도 그렇고 그냥 `Kaizen` 일본 단어 그대로 가져다 쓰길래 제목으로 써봤다.

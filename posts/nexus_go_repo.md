@@ -1,13 +1,12 @@
 ---
 title: "Nexus go repo"
+description: "Nexus에 Go proxy 저장소를 설정하는 방법과, 인증과 모듈 방식 등 다른 언어와 다른 Go 의존성 관리의 주의점."
 date: "2023-04-17"
 tags:
   - nexus
   - go
   - authentication
 ---
-
-# nexus go repo
 
 회사에서 넥서스를 registry로 쓰고 있는데,
 마침 go도 nexus에 추가해달라는 요청을 받고 찾다보니,
@@ -57,6 +56,6 @@ registry 오픈소스이다.
   - module 등을 도입하면서 위와 같은 상황에서 벗어나기 위해 proxy.golang.org 같은 곳에서 소스코드를 버전별로 분류해 저장하고 있지만, 권한 없이도 받아올 수 있는 public repo만 가능하다. private repo의 경우 proxy.golang.org에서 찾을 수 없다.
   - proxy.golang.org에서 찾을 수 없는 소스는 직접 주소에 요청을 하게 되는데, 이를 이용하여 private repo에 접근할 수 있는 계정을 동봉하여 요청을 보내면, 의존성을 가져올 수 있게 된다. .netrc 와 같은 방법을 통해서 할 수 있다.
 
-# 참조
+## 참조
 
 https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories

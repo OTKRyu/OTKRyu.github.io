@@ -1,13 +1,12 @@
 ---
 title: "Opensearch Blow Experience"
+description: "개발 환경 OpenSearch가 큰 벡터 요청에 CPU 100%로 멈춘 경험과 당시 세운 메모리 스왑 가설. 원인은 Revisit 글에서 다시 짚었다."
 date: "2025-04-27"
 relatedPost: "revisit"
 tags:
   - opensearch
-  - OOM
+  - memory
 ---
-
-# Opensearch Blow Experience
 
 ## 문제
 

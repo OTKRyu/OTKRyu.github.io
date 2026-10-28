@@ -1,14 +1,13 @@
 ---
 title: "Python logging with multi process"
+description: "멀티 프로세스 Python 서버에서 log rotate 시점에 로그가 누락되는 이유와, 파일 핸들러별 동작 차이 및 선택한 해결책."
 date: "2023-01-03"
 tags:
   - python
   - logging
   - flask
-  - multi process
+  - concurrency
 ---
-
-# python logging with multi process
 
 ## 배경지식
 

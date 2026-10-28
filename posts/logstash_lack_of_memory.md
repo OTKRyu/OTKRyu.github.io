@@ -1,13 +1,11 @@
 ---
 title: "Logstash lack of memory"
+description: "ELK 스택에서 로그가 점점 누락되던 원인이 CPU가 아니라 Logstash에 할당된 메모리 부족이었던 경험과, 스택 자체 모니터링의 필요성."
 date: "2023-02-04"
 tags:
-  - elk stack
   - logstash
-  - bug
+  - error
 ---
-
-# logstash lack of memory
 
 ## logstash(ELK stack)
 

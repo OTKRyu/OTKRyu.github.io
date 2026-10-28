@@ -1,14 +1,14 @@
 ---
 title: "Too many index cause performence issue in elasticsearch"
+description: "일자와 로그 종류별로 인덱스를 만들다 수천 개가 쌓여 느려진 Elasticsearch를, 인덱스 통합으로 30초에서 1~2초로 줄인 경험."
 date: "2023-06-14"
 tags:
   - elasticsearch
   - index policy
-  - cluster
-  - performence issue
+  - performance
 ---
 
-# ElasticSearch
+## ElasticSearch
 
 ## 문제
 

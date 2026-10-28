@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}{% if title != site.name %} | {{ site.name }}{% endif %}</title>
-  <meta name="description" content="{{ site.name }}{% if tags %} - {{ tags | join(', ') }}{% endif %}">
+  {% set summary = description or site.name %}
+  <meta name="description" content="{{ summary }}">
   <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ summary }}">
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:locale" content="ko_KR">
   <link rel="icon" href="/favicon.ico">

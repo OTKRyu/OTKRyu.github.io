@@ -1,8 +1,4 @@
-import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
-
   // public/ 아래 파일(favicon, 이미지)은 사이트 루트로 그대로 복사
   eleventyConfig.addPassthroughCopy({ public: "/" });
   eleventyConfig.addPassthroughCopy("style.css");
