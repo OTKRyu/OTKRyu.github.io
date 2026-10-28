@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: OTKRyu's blog
+---
+<h1>Home</h1>
+<p>안녕하세요, OTKRyu의 블로그입니다.<br>
+개발과 관련된 포스트들을 올리는 블로그입니다.<br>
+대단한 내용은 없더라도, 도움이 되었으면 좋겠습니다.</p>
+
+<h2>최근 글</h2>
+{% set posts = collections.posts | head(5) %}
+{% include "post-list.njk" %}
+<p><a href="/posts/">전체 글 보기 →</a></p>

@@ -1,0 +1,15 @@
+---
+layout: base.njk
+---
+<article>
+  <h1>{{ title }}</h1>
+  <p class="meta">
+    <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+    {% for tag in tags %}<a class="tag" href="/tags/{{ tag | urlencode }}/">{{ tag }}</a>{% endfor %}
+  </p>
+  {{ content | safe }}
+  {% if relatedPost %}
+    {% set related = collections.posts | findPost(relatedPost) %}
+    <p class="related">👉 Related post: <a href="/posts/{{ relatedPost }}/">{{ related.data.title if related else relatedPost }}</a></p>
+  {% endif %}
+</article>

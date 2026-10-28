@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}{% if title != site.name %} | {{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ site.name }}{% if tags %} - {{ tags | join(', ') }}{% endif %}">
+  <meta property="og:type" content="{% if layout == 'post.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">OTKRyu</a>
+    <nav>
+      <a href="/posts/">Posts</a>
+      <a href="/tags/">Tags</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+  <main>
+    {{ content | safe }}
+  </main>
+  <footer>
+    <a href="mailto:appn12@gmail.com">Email</a>
+    <a href="https://github.com/OTKRyu">GitHub</a>
+  </footer>
+</body>
+</html>

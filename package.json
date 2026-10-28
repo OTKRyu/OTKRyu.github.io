@@ -1,25 +1,16 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages"
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "deploy": "node scripts/deploy.js"
   },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.7",
-    "date-fns": "^2.29.2",
-    "gray-matter": "^4.0.3",
-    "next": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
-    "remark-prism": "^1.3.6"
+  "engines": {
+    "node": ">=24"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.11",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.1.8"
+    "@11ty/eleventy": "3.1.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "5.0.2"
   }
 }
