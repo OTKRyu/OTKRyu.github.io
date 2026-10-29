@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexus go repo | OTKRyu&#39;s blog</title>
+  
+  <meta name="description" content="Nexus에 Go proxy 저장소를 설정하는 방법과, 인증과 모듈 방식 등 다른 언어와 다른 Go 의존성 관리의 주의점.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://otkryu.github.io/posts/nexus_go_repo/">
+  <meta property="og:title" content="Nexus go repo">
+  <meta property="og:description" content="Nexus에 Go proxy 저장소를 설정하는 방법과, 인증과 모듈 방식 등 다른 언어와 다른 Go 의존성 관리의 주의점.">
+  <meta property="og:site_name" content="OTKRyu&#39;s blog">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">OTKRyu</a>
+    <nav>
+      <a href="/posts/">Posts</a>
+      <a href="/tags/">Tags</a>
+      <a href="/about/">About</a>
+    </nav>
+  </header>
+  <main>
+    
+
+<article>
+  <h1>Nexus go repo</h1>
+  <p class="meta">
+    <time datetime="2023-04-17">April 17, 2023</time>
+    <a class="tag" href="/tags/nexus/">nexus</a><a class="tag" href="/tags/go/">go</a><a class="tag" href="/tags/authentication/">authentication</a>
+  </p>
+  
+  <details class="toc" open>
+    <summary>목차</summary>
+    
+<ol>
+  
+  <li>
+    <a href="#nexus">nexus</a>
+    
+  </li>
+  
+  <li>
+    <a href="#how-to-set-go-repo-in-nexus">how to set go repo in nexus</a>
+    
+  </li>
+  
+  <li>
+    <a href="#go">go</a>
+    
+  </li>
+  
+  <li>
+    <a href="#참조">참조</a>
+    
+  </li>
+  
+</ol>
+
+  </details>
+  
+  <p>회사에서 넥서스를 registry로 쓰고 있는데,
+마침 go도 nexus에 추가해달라는 요청을 받고 찾다보니,
+다른 언어와는 달리 go는 nexus 관련 문서가 생각보다 없어서 작성하게 되었다.</p>
+<h2 id="nexus">nexus</h2>
+<p>registry 오픈소스이다.
+기업용과 오픈소스로 구분되어 있으며,
+오픈소스로도 꽤나 많은 기능을 제공하기 때문에,
+사내에서 private registry가 필요하다면 한 번 고려해볼만 하다.</p>
+<p>자세한 내용은 링크를 참조 (https://www.sonatype.com/products/nexus-repository)</p>
+<h2 id="how-to-set-go-repo-in-nexus">how to set go repo in nexus</h2>
+<p>기본적인 설정방법은 go repo 또한 다른 repo와 다르지 않다.
+다만 차이점이 있다면, go의 경우 아직 private repo를 제공하지 않기 때문에,
+의미 있게 쓸 수 있는건 proxy repo 정도이고,
+여러 proxy를 쓰는 게 아닌 이상 group은 별 의미가 없다고 생각된다.</p>
+<p>설정 순서는 아래와 같다.</p>
+<ol>
+<li>
+<p>admin 권한으로 로그인</p>
+</li>
+<li>
+<p>go repo 생성(proxy)</p>
+</li>
+<li>
+<p>go repo 이름 및 proxy 주소 설정</p>
+<ul>
+<li>다른 리포와 다른 점이라고 한다면, 다른 리포들은 기본적으로 쓰이는 repo가 https://registry.npmjs.org/ 등으로 명시되어 있는 반면, go는 기본적으로 쓰이는 리포가 적혀있지 않다.</li>
+<li>go 공식 repo를 쓰고 싶다면 https://proxy.golang.org 를 기재하면 된다.</li>
+</ul>
+</li>
+<li>
+<p>위 설정을 마친 뒤 nexus에 접근가능한 곳에서 GOPROXY 환경변수를 nexus주소로 변경</p>
+<ul>
+<li><code>go env</code> 명령어를 통해 go에서 참조하는 환경변수 확인 가능</li>
+<li><code>export GOPROXY=nexus-address</code>로 환경변수 변경 가능</li>
+</ul>
+</li>
+<li>
+<p><code>go get</code>를 이용하여 원하는 의존성 다운로드</p>
+</li>
+</ol>
+<h2 id="go">go</h2>
+<p>세팅 방법 자체는 다른 언어와 다를 것 없지만 go와 관련된 몇 가지 주의사항이 있어 추가로 기재한다.</p>
+<ul>
+<li>go는 패키지 매니저가 없다. 언어에 내장되어 있다. 따라서 다른 패키지 매니정에서 제공하는 지원을 받을 수 없을 수도 있다.
+<ul>
+<li>사실 패키지 관리를 언어 자체로도 잘 한다면 크게 문제될 일이 아니다마는, nexus와 같은 private registry를 쓰는데에는 보안의 문제도 있기 때문에 auth 기능이 없다면 사용에 제약이 있을 수 있다.</li>
+<li>실제로 필자의 경우 auth 기능을 사용해야지만 nexus 로그에 언제 누가 어떤 패키지를 받아갔는지 로그가 남기 때문에, 기존 정책대로는 go repo를 사용할 수 없었다.</li>
+</ul>
+</li>
+<li>go는 초기에 패키지를 주소 기반으로 받아왔다. https://github.com/~ 으로 시작한다면 실제로 주소를 인식하고 git 프로토콜을 이용해 소스코드를 받아왔다.
+<ul>
+<li>현재는 원본에서 소스코드를 받아오는 것에 단점 때문에 module 등을 도입하여 변경되었지만, 위와 같은 방식으로 운영되었기 때문에 의존성을 import 할 때 실제 주소처럼 쓰이는 것이다.</li>
+<li>module 등을 도입하면서 위와 같은 상황에서 벗어나기 위해 proxy.golang.org 같은 곳에서 소스코드를 버전별로 분류해 저장하고 있지만, 권한 없이도 받아올 수 있는 public repo만 가능하다. private repo의 경우 proxy.golang.org에서 찾을 수 없다.</li>
+<li>proxy.golang.org에서 찾을 수 없는 소스는 직접 주소에 요청을 하게 되는데, 이를 이용하여 private repo에 접근할 수 있는 계정을 동봉하여 요청을 보내면, 의존성을 가져올 수 있게 된다. .netrc 와 같은 방법을 통해서 할 수 있다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="참조">참조</h2>
+<p>https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/go-repositories</p>
+
+  
+</article>
+
+  </main>
+  <footer>
+    <a href="mailto:appn12@gmail.com">Email</a>
+    <a href="https://github.com/OTKRyu">GitHub</a>
+  </footer>
+</body>
+</html>
