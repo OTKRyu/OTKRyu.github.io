@@ -1,6 +1,16 @@
 ---
 layout: base.njk
 ---
+{% macro tocList(items) %}
+<ol>
+  {% for item in items %}
+  <li>
+    <a href="#{{ item.id }}">{{ item.text | safe }}</a>
+    {% if item.children.length %}{{ tocList(item.children) }}{% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% endmacro %}
 {% set toc = content | toc %}
 <article>
   <h1>{{ title }}</h1>
@@ -8,21 +18,10 @@ layout: base.njk
     <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
     {% for tag in tags %}<a class="tag" href="/tags/{{ tag | urlencode }}/">{{ tag }}</a>{% endfor %}
   </p>
-  {% if toc.length > 1 %}
+  {% if toc.count > 1 %}
   <details class="toc" open>
     <summary>목차</summary>
-    <ol>
-      {% for item in toc %}
-      <li>
-        <a href="#{{ item.id }}">{{ item.text | safe }}</a>
-        {% if item.children.length %}
-        <ol>
-          {% for child in item.children %}<li><a href="#{{ child.id }}">{{ child.text | safe }}</a></li>{% endfor %}
-        </ol>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ol>
+    {{ tocList(toc.items) }}
   </details>
   {% endif %}
   {{ content | safe }}

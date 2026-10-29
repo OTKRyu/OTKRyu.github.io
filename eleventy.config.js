@@ -7,7 +7,7 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("AGENTS.md");
   eleventyConfig.ignores.add("CLAUDE.md");
 
-  // 마크다운 제목(h2~h4)에 id 를 붙여서 목차에서 링크할 수 있게 한다
+  // 마크다운 제목(h2~h6)에 id 를 붙여서 목차에서 링크할 수 있게 한다
   const slugify = (text) =>
     text
       .trim()
@@ -16,26 +16,33 @@ export default function (eleventyConfig) {
       .replace(/\s+/g, "-");
   eleventyConfig.amendLibrary("md", (md) => {
     md.core.ruler.push("heading_ids", (state) => {
-      const used = new Map();
+      const used = new Set();
       state.tokens.forEach((token, i) => {
         if (token.type !== "heading_open" || token.tag === "h1") return;
+        // 같은 id 가 이미 있으면 -1, -2 ... 를 붙인다
         const base = slugify(state.tokens[i + 1].content) || "section";
-        const n = used.get(base) || 0;
-        used.set(base, n + 1);
-        token.attrSet("id", n ? `${base}-${n}` : base);
+        let id = base;
+        for (let n = 1; used.has(id); n++) id = `${base}-${n}`;
+        used.add(id);
+        token.attrSet("id", id);
       });
     });
   });
 
-  // 렌더된 본문에서 h2, h3 를 뽑아 [{ id, text, children }] 목차를 만든다
+  // 렌더된 본문에서 h2~h6 를 뽑아 제목 레벨대로 중첩된 [{ id, text, children }] 목차를 만든다
   eleventyConfig.addFilter("toc", (html) => {
-    const toc = [];
-    for (const [, level, id, inner] of html.matchAll(/<h([23]) id="([^"]+)">(.*?)<\/h\1>/g)) {
-      const item = { id, text: inner.replace(/<[^>]+>/g, ""), children: [] };
-      if (level === "3" && toc.length) toc.at(-1).children.push(item);
-      else toc.push(item);
+    const root = { level: 1, children: [] };
+    const stack = [root];
+    let count = 0;
+    for (const [, level, id, inner] of html.matchAll(/<h([2-6]) id="([^"]+)">(.*?)<\/h\1>/g)) {
+      const item = { level: Number(level), id, text: inner.replace(/<[^>]+>/g, ""), children: [] };
+      // 자기보다 같거나 깊은 제목은 닫고, 남은 맨 위 제목의 자식으로 붙인다
+      while (stack.at(-1).level >= item.level) stack.pop();
+      stack.at(-1).children.push(item);
+      stack.push(item);
+      count++;
     }
-    return toc;
+    return { items: root.children, count };
   });
 
   // 최신 글이 먼저 오도록 정렬된 글 목록
