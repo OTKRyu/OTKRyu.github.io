@@ -7,6 +7,37 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("AGENTS.md");
   eleventyConfig.ignores.add("CLAUDE.md");
 
+  // 마크다운 제목(h2~h4)에 id 를 붙여서 목차에서 링크할 수 있게 한다
+  const slugify = (text) =>
+    text
+      .trim()
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}\s-]/gu, "")
+      .replace(/\s+/g, "-");
+  eleventyConfig.amendLibrary("md", (md) => {
+    md.core.ruler.push("heading_ids", (state) => {
+      const used = new Map();
+      state.tokens.forEach((token, i) => {
+        if (token.type !== "heading_open" || token.tag === "h1") return;
+        const base = slugify(state.tokens[i + 1].content) || "section";
+        const n = used.get(base) || 0;
+        used.set(base, n + 1);
+        token.attrSet("id", n ? `${base}-${n}` : base);
+      });
+    });
+  });
+
+  // 렌더된 본문에서 h2, h3 를 뽑아 [{ id, text, children }] 목차를 만든다
+  eleventyConfig.addFilter("toc", (html) => {
+    const toc = [];
+    for (const [, level, id, inner] of html.matchAll(/<h([23]) id="([^"]+)">(.*?)<\/h\1>/g)) {
+      const item = { id, text: inner.replace(/<[^>]+>/g, ""), children: [] };
+      if (level === "3" && toc.length) toc.at(-1).children.push(item);
+      else toc.push(item);
+    }
+    return toc;
+  });
+
   // 최신 글이 먼저 오도록 정렬된 글 목록
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("posts/*.md").sort((a, b) => b.date - a.date)

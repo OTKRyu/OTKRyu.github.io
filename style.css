@@ -106,3 +106,38 @@ pre code { background: none; padding: 0; }
 .post-list time, .tag-list span { color: var(--muted); font-size: 0.9rem; }
 .tag-list li { padding: 0.25rem 0; }
 
+
+/* 목차: 좁은 화면은 본문 위 접이식, 넓은 화면은 본문 왼쪽에 고정 */
+html { scroll-behavior: smooth; }
+h2, h3, h4 { scroll-margin-top: 1.5rem; }
+.toc {
+  margin: 1.5rem 0 2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.toc summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc > ol { margin-top: 0.5rem; }
+.toc li { margin: 0.3rem 0; }
+.toc ol ol { padding-left: 1rem; }
+.toc a { color: var(--muted); }
+.toc a:hover { color: var(--link); }
+
+@media (min-width: 84rem) {
+  .toc {
+    position: fixed;
+    top: 6rem;
+    left: calc(50% - 23rem - 16rem);
+    width: 14rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .toc summary { pointer-events: none; list-style: none; }
+  .toc summary::-webkit-details-marker { display: none; }
+}
